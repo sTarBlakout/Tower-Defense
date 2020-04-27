@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GunnerAOC
+  m_Controller: {fileID: 9100000, guid: ca150d1334ace784bae16abfdcdd9188, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 94c75858633b4e04f9e28db3b52b2bba, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: f158a4a141626a645aba1670d0df0fbb, type: 3}
+  - m_OriginalClip: {fileID: 7400002, guid: 8787cc3da435ba04e8954530e0c91454, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: baed4ed07c0b8b34c9dadd6dda823631, type: 3}
