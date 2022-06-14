@@ -25,9 +25,9 @@ namespace TowerDefence.UI
             popUp = panelGameplay.transform.Find("PopUp").gameObject;
             popUpMsg = popUp.transform.GetChild(0).GetComponent<Text>();
 
-            mageCostText = panelGameplay.transform.Find("MageButton").Find("Image").Find("CostText").GetComponent<Text>();
-            gunnerCostText = panelGameplay.transform.Find("GunnerButton").Find("Image").Find("CostText").GetComponent<Text>();
-            archerCostText = panelGameplay.transform.Find("ArcherButton").Find("Image").Find("CostText").GetComponent<Text>();
+            mageCostText = panelGameplay.transform.Find("HeroButtons").Find("MageButton").Find("Image").Find("CostText").GetComponent<Text>();
+            gunnerCostText = panelGameplay.transform.Find("HeroButtons").Find("GunnerButton").Find("Image").Find("CostText").GetComponent<Text>();
+            archerCostText = panelGameplay.transform.Find("HeroButtons").Find("ArcherButton").Find("Image").Find("CostText").GetComponent<Text>();
         }
 
         private void Start() 

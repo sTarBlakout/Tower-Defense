@@ -15,6 +15,7 @@ namespace TowerDefence.Core
         [SerializeField] GameObject gameplayVirtCam = null;
         [SerializeField] GameObject[] enemyPrefabs = null;
         [SerializeField] Hero[] availableHeroes;
+        [SerializeField] private GameObject heroButtons;
 
         [Header("Values")]
         [SerializeField] int initialWaveEnemAmount = 3;
@@ -132,6 +133,7 @@ namespace TowerDefence.Core
             if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
             {
                 managerUI.ShowButton(ButtonType.BUTTON_START_WAVE, true);
+                heroButtons.SetActive(true);
             }
         }
 
@@ -197,6 +199,7 @@ namespace TowerDefence.Core
         //Called by UI button
         public void StartWave()
         {
+            heroButtons.SetActive(false);
             if (enemySpawnPortal != null)
                 enemySpawnPortal.Play();
             managerUI.ShowButton(ButtonType.BUTTON_START_WAVE, false);
