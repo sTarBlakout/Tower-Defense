@@ -12,7 +12,7 @@ namespace TowerDefence.Player
 
         public Action OnDestroy;
 
-        private float currentHealth = 0f;
+        public float currentHealth = 0f;
         private bool isDestroyed = false;
 
         private void Awake() 

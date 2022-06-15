@@ -13,7 +13,7 @@ namespace TowerDefence.Enemy
         [SerializeField] int moneyOnDeath = 20;
         [SerializeField] AnimatorOverrideController animatorOverrideController = null;
         private CapsuleCollider capsuleCollider;
-        private float currHealth = 0f;
+        public float currHealth = 0f;
         private bool gaveMoneyForKill = false;
 
         private NavMeshAgent navMeshAgent = null;
@@ -109,7 +109,7 @@ namespace TowerDefence.Enemy
             }
             else
             {
-                Debug.LogError("WayPointsHolder not found!");
+                Debug.Log("WayPointsHolder not found!");
             }
         }
 
@@ -148,7 +148,7 @@ namespace TowerDefence.Enemy
             {
                 Die();
             }
-            healthSlider.value = currHealth / initialHealth;
+            if (healthSlider != null) healthSlider.value = currHealth / initialHealth;
         }
 
         public float GetCurrentHealth()

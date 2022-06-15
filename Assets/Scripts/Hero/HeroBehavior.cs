@@ -21,7 +21,7 @@ namespace TowerDefence.Hero
         private Animator animator;
 
         private float lastTimeShot = 0f;
-        private Transform target = null;
+        public Transform target = null;
 
 
         private void Awake() 
@@ -49,15 +49,20 @@ namespace TowerDefence.Hero
             transform.rotation = q;  
         }
 
+        public bool IsReadyToShoot()
+        {
+            return Time.time > lastTimeShot + fireRate;
+        }
+
         private void ShootingBehavior()
         {
-            if (Time.time > lastTimeShot + fireRate)    
+            if (IsReadyToShoot())    
             {
                 lastTimeShot = Time.time;
                 target = FindClosestEnemy();
                 if (target != null)
                 {
-                    animator.SetTrigger("Shoot");
+                    if (animator != null) animator.SetTrigger("Shoot");
                     StartCoroutine(InstantiateShotInSeconds(timeBeforeShotInstantiation));
                 }
             } 

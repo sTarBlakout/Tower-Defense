@@ -26,12 +26,25 @@ namespace TowerDefence.Player
             }
         }
 
-        private void ClearHeroPos()
+        public void ClearHeroPos()
         {
+            if (heroPos == null) heroPos = transform.Find("HeroPosition");
             foreach (Transform child in heroPos)
             {
                 Destroy(child.gameObject);
             }
+        }
+
+        public bool HasChildren()
+        {
+            var has = false;
+            foreach (Transform child in heroPos) has = true;
+            return has;
+        }
+
+        public bool IsBusy()
+        {
+            return nextHeroInstantiate != null;
         }
 
         public void ActivateSpawnButton(bool activate)
